@@ -28,9 +28,9 @@
     <em>Messages</em>
     <em>Messages</em>
     <div th:each="message : ${messages}">
-        <span class="chatMessageUsername" th:text="${message.user.name}">Username</span> <span class="chatMessageDate" th:text="${message.date}">Date</span>: <span
-            class="chatMessageText"
-            th:text="${message.message}">Hello, world!</span>
+        <span class="chatMessageUsername" th:text="${message.user.name}">Username</span>
+        <span class="chatMessageDate" th:text="${message.date}">Date</span>:
+        <span class="chatMessageText" th:text="${message.message}">Hello, world!</span>
     </div>
 </div>
 </body>

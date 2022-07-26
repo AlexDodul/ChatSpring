@@ -18,7 +18,7 @@ public class UserService implements IUserService {
         return userRepo.save(user);
     }
 
-    public User getByName(String name){
+    public User getByName(String name) {
         return userRepo.getByName(name);
     }
 }

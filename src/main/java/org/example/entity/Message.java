@@ -1,7 +1,6 @@
 package org.example.entity;
 
 import javax.persistence.*;
-
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -9,7 +8,8 @@ import java.util.Date;
 @Entity
 public class Message {
 
-    public Message() {}
+    public Message() {
+    }
 
     public Message(Long id, User user, String message, Timestamp date) {
         this.id = id;

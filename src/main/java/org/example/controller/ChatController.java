@@ -1,4 +1,4 @@
-package org.example.controller.impl;
+package org.example.controller;
 
 import org.example.dto.ChatForm;
 import org.example.service.IMessageService;

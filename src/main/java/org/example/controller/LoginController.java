@@ -1,4 +1,4 @@
-package org.example.controller.impl;
+package org.example.controller;
 
 import org.example.entity.User;
 import org.example.service.IUserService;
@@ -31,7 +31,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public String createUser(@ModelAttribute("user") User user, Model model, HttpServletResponse response) {
-        if (userService.getByName(user.getName()) == null){
+        if (userService.getByName(user.getName()) == null) {
             user = userService.createUser(user);
         }
         model.addAttribute("user", user);

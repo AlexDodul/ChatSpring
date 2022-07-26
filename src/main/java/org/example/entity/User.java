@@ -6,7 +6,8 @@ import javax.persistence.*;
 @Entity
 public class User {
 
-    public User() {}
+    public User() {
+    }
 
     public User(String username) {
         this.name = username;
