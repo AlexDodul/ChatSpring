@@ -1,7 +1,5 @@
 package org.example.entity;
 
-import jakarta.validation.constraints.NotNull;
-
 import javax.persistence.*;
 
 @Table(name = "users")
@@ -23,7 +21,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
     @Column(name = "user_name")
     private String name;
 

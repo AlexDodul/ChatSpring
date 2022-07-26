@@ -5,7 +5,7 @@ public class ChatForm {
     private String userName;
     private String messageText;
 
-    public ChatForm(String userName) {}
+    public ChatForm() {}
 
     public ChatForm(String userName, String messageText) {
         this.userName = userName;

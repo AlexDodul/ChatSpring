@@ -5,17 +5,13 @@ import org.example.service.IMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.security.Principal;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/chat")
 public class ChatController {
 
-    private IMessageService messageService;
+    private final IMessageService messageService;
 
     @Autowired
     public ChatController(IMessageService messageService) {
@@ -23,14 +19,14 @@ public class ChatController {
     }
 
     @GetMapping
-    public String getChatPage(ChatForm chatForm, Model model) {
+    public String getChatPage(@ModelAttribute("chatForm") ChatForm chatForm, Model model) {
         model.addAttribute("messages", this.messageService.getLast50Messages());
         return "chat";
     }
 
     @PostMapping
-    public String postChatMessage(ChatForm chatForm, Model model, Principal principal) {
-        chatForm.setUserName(principal.getName());
+    public String postChatMessage(ChatForm chatForm, Model model, @CookieValue String userName) {
+        chatForm.setUserName(userName);
         this.messageService.addMessage(chatForm);
         chatForm.setMessageText("");
         model.addAttribute("messages", this.messageService.getLast50Messages());

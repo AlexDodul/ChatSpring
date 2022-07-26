@@ -21,16 +21,14 @@
                 <label><a id="signup-link" th:href="@{/chat}">Refresh</a></label>
             </div>
         </div>
-        <div class="col-4">
-            <a id="logout-link" th:href="@{/logout}">Logout</a>
-        </div>
     </div>
 </div>
 <br/>
 <div class="container">
     <em>Messages</em>
+    <em>Messages</em>
     <div th:each="message : ${messages}">
-        <span class="chatMessageUsername" th:text="${message.user.name}">Username</span>: <span
+        <span class="chatMessageUsername" th:text="${message.user.name}">Username</span> <span class="chatMessageDate" th:text="${message.date}">Date</span>: <span
             class="chatMessageText"
             th:text="${message.message}">Hello, world!</span>
     </div>
