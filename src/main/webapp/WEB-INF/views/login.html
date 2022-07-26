@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Login</title>
+</head>
+<body class="p-3 mb-2 bg-light text-black">
+<div class="container justify-content-center w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;">
+    <h1 class="display-5">Login</h1>
+    <form action="#" method="POST" th:action="@{/login}">
+        <div class="form-group">
+            <label for="inputUsername">Username</label>
+            <input class="form-control" id="inputUsername" maxlength="20" name="username" placeholder="Enter Username"
+                   required type="input">
+        </div>
+        <button class="btn btn-primary" id="submit-button" type="submit">Login</button>
+    </form>
+</div>
+</body>
+</html>
